@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WPD Device Info</title>
+  <style>
+    html {
+      box-sizing: border-box;
+      overflow-x: hidden;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    code,
+    pre{
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+
+    html,
+    body {
+      font-family: Verdana, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .container:after,
+    .container:before,
+    .panel:after,
+    .panel:before {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .container,
+    .panel {
+      padding: 0.01em 16px;
+    }
+
+    .panel {
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .code {
+      font-family: Consolas, "Courier New";
+      font-size: 16px;
+      width: auto;
+      background-color: #fff;
+      padding: 8px 12px;
+      border-left: 4px solid #afafaf;
+      word-wrap: break-word;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .border {
+      border: 1px solid #ccc;
+    }
+
+    .white {
+      color: #000;
+      background-color: #fff;
+    }
+
+    .light-grey {
+      color: #000;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container light-grey">
+    <div class="panel white border">
+      <code><pre class="code" id="DeviceInfo"></pre></code>
+    </div>
+  </div>
+  <script src="./lib/wpd.lib.js"></script>
+  <script>
+    var Devices = get_WPD_Devices();
+    DeviceInfo.innerHTML = JSON.stringify(Devices, null, 2);
+  </script>
+</body>
+</html>

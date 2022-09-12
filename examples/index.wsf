@@ -1,0 +1,11 @@
+<job id="DisplayDevices">
+   <script language="JScript" src="./lib/json2.min.js"/>
+   <script language="JScript" src="./lib/wpd.lib.js"/>
+   <script language="JScript">   
+    WScript.Echo(JSON.stringify(get_WPD_Devices(), null, 2));
+    if (WScript.FullName.indexOf("cscript") != -1){
+      WScript.Stdin.ReadLine();
+      WScript.Exit();
+    }
+   </script>
+</job>
